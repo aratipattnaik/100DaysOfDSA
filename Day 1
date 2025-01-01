@@ -1,0 +1,16 @@
+# 100 Days of DSA with Java
+
+This repository contains my journey of learning Data Structures and Algorithms (DSA) using Java over 100 days. Each day, I will solve problems, write code, and document my progress.
+
+## Day 1: Java Basics
+- Variables, Data Types, Input/Output
+- Focus on understanding basic syntax and structure.
+- Solve simple problems using loops and conditionals.
+
+## Goals for Day 1
+- Write Java code for basic input/output.
+- Understand the concept of variables and data types.
+- Learn how to write basic loops and conditions in Java.
+
+## Progress
+- [ ] Java Basics: Learned how to declare variables and use loops.
