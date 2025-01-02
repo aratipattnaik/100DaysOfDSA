@@ -1,0 +1,110 @@
+# 7 Questions and Solutions
+1. Find the Smallest Element in an Array
+java
+Copy code
+public class FindSmallest {
+    public static void main(String[] args) {
+        int[] arr = {4, 2, 7, 1, 9};
+        int min = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        System.out.println("Smallest element: " + min);
+    }
+}
+2. Check if an Array Contains a Specific Element
+java
+Copy code
+public class ContainsElement {
+    public static void main(String[] args) {
+        int[] arr = {4, 2, 7, 1, 9};
+        int target = 7;
+        boolean found = false;
+        for (int num : arr) {
+            if (num == target) {
+                found = true;
+                break;
+            }
+        }
+        System.out.println("Contains " + target + ": " + found);
+    }
+}
+3. Find the Average of an Array
+java
+Copy code
+public class ArrayAverage {
+    public static void main(String[] args) {
+        int[] arr = {4, 2, 7, 1, 9};
+        int sum = 0;
+        for (int num : arr) {
+            sum += num;
+        }
+        double average = (double) sum / arr.length;
+        System.out.println("Average: " + average);
+    }
+}
+4. Count Even and Odd Numbers in an Array
+java
+Copy code
+public class CountEvenOdd {
+    public static void main(String[] args) {
+        int[] arr = {4, 2, 7, 1, 9};
+        int evenCount = 0, oddCount = 0;
+        for (int num : arr) {
+            if (num % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+            }
+        }
+        System.out.println("Even count: " + evenCount);
+        System.out.println("Odd count: " + oddCount);
+    }
+}
+5. Find All the Prime Numbers in an Array
+java
+Copy code
+public class FindPrimes {
+    public static void main(String[] args) {
+        int[] arr = {4, 2, 7, 1, 9};
+        System.out.print("Prime numbers: ");
+        for (int num : arr) {
+            if (isPrime(num)) {
+                System.out.print(num + " ");
+            }
+        }
+    }
+    
+    public static boolean isPrime(int n) {
+        if (n <= 1) return false;
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+}
+6. Rotate an Array to the Right
+java
+Copy code
+public class RotateArray {
+    public static void main(String[] args) {
+        int[] arr = {4, 2, 7, 1, 9};
+        int k = 2; // Number of positions to rotate
+        int n = arr.length;
+        int[] rotated = new int[n];
+        
+        for (int i = 0; i < n; i++) {
+            rotated[(i + k) % n] = arr[i];
+        }
+        
+        System.out.print("Rotated array: ");
+        for (int num : rotated) {
+            System.out.print(num + " ");
+        }
+    }
+}
+7. Find the Frequency of Each Element in an Array
+java
+Copy code
