@@ -1,8 +1,7 @@
  **7 Questions and Solutions**
 
 1. Find the Smallest Element in an Array
-java
-Copy code
+
 public class FindSmallest {
     public static void main(String[] args) {
         int[] arr = {4, 2, 7, 1, 9};
@@ -16,8 +15,7 @@ public class FindSmallest {
     }
 }
 2. Check if an Array Contains a Specific Element
-java
-Copy code
+
 public class ContainsElement {
     public static void main(String[] args) {
         int[] arr = {4, 2, 7, 1, 9};
@@ -33,8 +31,7 @@ public class ContainsElement {
     }
 }
 3. Find the Average of an Array
-java
-Copy code
+
 public class ArrayAverage {
     public static void main(String[] args) {
         int[] arr = {4, 2, 7, 1, 9};
@@ -47,8 +44,7 @@ public class ArrayAverage {
     }
 }
 4. Count Even and Odd Numbers in an Array
-java
-Copy code
+
 public class CountEvenOdd {
     public static void main(String[] args) {
         int[] arr = {4, 2, 7, 1, 9};
@@ -65,8 +61,7 @@ public class CountEvenOdd {
     }
 }
 5. Find All the Prime Numbers in an Array
-java
-Copy code
+
 public class FindPrimes {
     public static void main(String[] args) {
         int[] arr = {4, 2, 7, 1, 9};
@@ -87,8 +82,7 @@ public class FindPrimes {
     }
 }
 6. Rotate an Array to the Right
-java
-Copy code
+
 public class RotateArray {
     public static void main(String[] args) {
         int[] arr = {4, 2, 7, 1, 9};
@@ -107,5 +101,37 @@ public class RotateArray {
     }
 }
 7. Find the Frequency of Each Element in an Array
-java
-Copy code
+
+public class FrequencyCountSimple {
+    public static void main(String[] args) {
+        int[] arr = {4, 2, 7, 2, 9, 4, 4}; // Example array
+        int n = arr.length; // Length of the array
+
+        System.out.println("Frequency of elements:");
+
+        // Use a visited array to mark elements that are already counted
+        boolean[] visited = new boolean[n];
+
+        for (int i = 0; i < n; i++) {
+            // Skip already visited elements
+            if (visited[i]) {
+                continue;
+            }
+
+            int count = 1; // Count starts at 1 for the current element
+
+            // Compare with the rest of the array
+            for (int j = i + 1; j < n; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
+                    visited[j] = true; // Mark the duplicate as visited
+                }
+            }
+
+            // Print the frequency of the current element
+            System.out.println(arr[i] + " -> " + count);
+        }
+    }
+}
+
+
