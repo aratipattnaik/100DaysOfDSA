@@ -1,0 +1,113 @@
+public class Day4_Problems {
+
+    // 1. Sum of Array Elements
+    public static int findSum(int[] arr) {
+        int sum = 0;
+        for (int num : arr) {
+            sum += num;
+        }
+        return sum;
+    }
+
+    // 2. Find Maximum in an Array
+    public static int findMax(int[] arr) {
+        int max = arr[0];
+        for (int num : arr) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        return max;
+    }
+
+    // 3. Reverse an Array
+    public static int[] reverseArray(int[] arr) {
+        int start = 0, end = arr.length - 1;
+        while (start < end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+        return arr;
+    }
+
+    // 4. Count Occurrences of an Element
+    public static int countOccurrences(int[] arr, int target) {
+        int count = 0;
+        for (int num : arr) {
+            if (num == target) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    // 5. Check if Array is Sorted
+    public static boolean isSorted(int[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[i - 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // 6. Find the Second Largest Element in an Array
+    public static int findSecondLargest(int[] arr) {
+        int largest = Integer.MIN_VALUE, secondLargest = Integer.MIN_VALUE;
+        for (int num : arr) {
+            if (num > largest) {
+                secondLargest = largest;
+                largest = num;
+            } else if (num > secondLargest && num < largest) {
+                secondLargest = num;
+            }
+        }
+        return secondLargest;
+    }
+
+    // 7. Find the Index of an Element
+    public static int findIndex(int[] arr, int target) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) {
+                return i;
+            }
+        }
+        return -1; // If not found
+    }
+
+    // Main method to test all functions
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+
+        // Test 1
+        System.out.println("Sum: " + findSum(arr));
+
+        // Test 2
+        System.out.println("Max: " + findMax(arr));
+
+        // Test 3
+        int[] reversedArray = reverseArray(arr.clone());
+        System.out.print("Reversed Array: ");
+        for (int num : reversedArray) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        // Test 4
+        int target = 2;
+        System.out.println("Occurrences of " + target + ": " + countOccurrences(arr, target));
+
+        // Test 5
+        System.out.println("Is Sorted: " + isSorted(arr));
+
+        // Test 6
+        System.out.println("Second Largest: " + findSecondLargest(arr));
+
+        // Test 7
+        target = 3;
+        System.out.println("Index of " + target + ": " + findIndex(arr, target));
+    }
+}
